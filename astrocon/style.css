@@ -1,0 +1,1333 @@
+/*
+Theme Name: astrocon
+Theme URI: http://localhost:8000/
+Author: Luka Courmont
+Author URI: http://localhost:8000/
+Description: Theme principal pour le site d'astrocon
+Version: 1.0
+*/
+@import url(https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800);
+@import url(http://fonts.googleapis.com/css?family=Exo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800);
+
+
+
+html {
+    
+    scroll-behavior: smooth;
+}
+
+body{
+    
+    padding: 0;
+    margin: 0;
+    line-height: 1;
+    box-sizing: border-box;
+}
+
+/* HEADER */
+
+header {
+    display: flex;
+    background: linear-gradient(to top, transparent, #041E30);
+    align-items: center;
+    padding: 1rem;
+    position: absolute;
+    z-index:99;
+}
+.menu {
+    display:flex;
+    list-style-type: none;
+    justify-content: right;
+    
+}
+
+.lang-item {
+    list-style-type: none;
+    margin-left: 1rem;
+}
+
+.menu a{
+    font-family: Exo;
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.menu-mainastro-container { /* pour que le côté gauche prend bien toute la place*/
+    flex-basis: 89%;
+}
+
+.menu-anglmainastro-container {
+    flex-basis: 89%;
+}
+
+header img {
+    width:22%;
+}
+
+#date {
+    display:block;
+    font-size: 1.3rem
+}
+#place{
+    text-transform: uppercase;
+    font-weight:600;
+}
+#logo {
+    display: flex;
+    align-items: center;
+    font-family: Exo;
+    color: white;
+    flex-basis: 25%;
+}
+
+.menu-item {
+    margin-right: 2rem;
+    margin-left: 2rem;
+    position:relative;
+    text-transform: uppercase;
+    width: fit-content;
+    width: -moz-fit-content;
+}
+
+.menu-item:after { /* les barres entre les catégories */
+    position:absolute;
+    top:0;
+    left:calc(100% + 2rem);
+    content: " ";
+    background-color:white;
+    height:100%;
+    width: 2px;
+}
+
+.menu-item-101:after { /* faire disparaitre la dernière barre */
+    width: 0;
+}
+
+
+
+.menu-item::before { /* souligné les titres */
+    position:absolute;
+    bottom:0;
+    right:0;
+    content: " ";
+    background-color:#125788;
+    height:2px;
+    width: 0;
+    transition: width 0.25s ease-out; 
+    margin-bottom: -0.1rem;
+}
+
+.menu-item:hover::before { /* ça arrive par la gauche ça part à droite */
+    width:100%;
+    left:0;
+}
+
+.current-menu-item a {
+    color:#FF7733;
+}
+
+header .bx {
+    display:none;
+}
+
+#remonter {
+    background-color: #FF7733;
+    width: 60px;
+    height: 60px;
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    border-radius: 50%;
+}
+
+#remonter img {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* FOOTER */
+
+footer {
+   background-position: center;
+    background-size: cover;
+    color: white;
+    font-family: Exo;
+    padding: 3rem;
+}
+
+#layoutFooter {
+    background-color: rgba(0, 0, 0, 0.6);
+    display:flex;
+    padding: 1rem;
+}
+
+#partieUn {
+    flex-basis: 70%;
+}
+
+#partieUn form {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    width: -moz-fit-content;
+}
+
+#partieUn > div {
+    display: flex;
+}
+
+.newsletter div {
+    width:100%;
+}
+
+#partieUn img {
+    width: 50%;
+    margin-bottom: 2rem;
+}
+
+#partieUn > div > div {
+    margin-right: 5rem;
+    flex-basis:content;
+}
+
+#partieUn label {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+#partieUn input[type="text"] {
+    width: 75%;
+    height: 1.7rem;
+    border: none;
+    font-family: Exo;
+}
+
+#partieUn input[type="submit"] {
+    width: 23%;
+    height: 1.7rem;
+    color: white;
+    background-color: #FF7733;
+    border: none;
+    font-family: Exo;
+}
+
+#reseaux{
+    display: flex;
+}
+
+#partieUn .menu-item:after{
+    width:0;
+}
+
+#partieUn ul {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#partieUn a {
+    font-size: 1.2rem;
+}
+
+#partieUn li {
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+}
+#partieUn p {
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+}
+
+.numero p {
+    font-size: 1.2rem;
+    padding: 0.2rem;
+}
+
+.numero {
+    display:flex;
+    align-items: center;
+}
+
+#partieDeux .titre {
+    margin-bottom: 0;
+    text-transform:uppercase;
+    font-weight: 500;
+    font-size: 1.4rem;
+}
+
+.bleu-footer {
+    background-color: #00BEEA;
+    border-radius: 5px;
+}
+
+
+#partieDeux img {
+    width: 100;
+    margin-top: 1rem;
+}
+
+#partieDeux .bx {
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* GENERAL */
+
+.lang-item > a > img {
+    height: auto!important;
+    width: 25px!important;
+}
+
+.blanc {
+    padding:2rem;
+    background-color: white;
+    max-width: 100%;
+}
+
+.noir p {
+    color: white;
+
+}
+
+.noir {
+    padding:2rem;
+    background-color: #041E30;
+    max-width: 100%;
+}
+
+.centre {
+    align-items: center;
+    justify-content: space-around;
+    display: flex;
+    width:100%;
+}
+
+.noir h4{
+    font-family: Exo;
+    font-size: 2.3rem;
+    position: relative;
+    width: fit-content;
+    width: -moz-fit-content;
+    text-transform: uppercase;
+    --pseudoWidth: 0%;
+    z-index: 99; 
+    color:white;
+}
+
+.blanc h4 {
+    color: #041E30;
+}
+
+.trait-dessous{
+    font-family: Exo;
+    font-size: 2.3rem;
+    position: relative;
+    width: fit-content;
+    width: -moz-fit-content;
+    text-transform: uppercase;
+    --pseudoWidth: 0%;
+    z-index: 99;
+}
+
+.titre-int > div > div {
+    flex-basis: 50%;
+    margin-right:3rem;
+}
+
+.titre-ext h3 {
+    margin-left: 2rem;
+    width: fit-content;
+}
+.titre-ext > div {
+    flex-direction: column;
+}
+
+.noir .trait-dessous {
+    color: white;
+}
+
+.blanc .trait-dessous{
+    color: #041E30;
+}
+
+.trait-dessous:after{
+    content:" ";
+    width: var(--pseudoWidth);
+    height: 6px;
+    background-color: #00BEEA;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    position: absolute;
+    bottom: -3px;
+    left:0;
+    z-index: -1;
+    
+}
+
+.haut {
+    position:relative;
+    text-align: center;
+    height: 100%;
+}
+
+.haut-titre {
+    padding-top: 35vh;
+}
+
+@keyframes slideDown {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(2rem);
+    }
+
+    100%{
+        transform: translateY(0);
+    }
+}
+
+.bx-chevron-down {
+    position:absolute;
+    color: white;
+    bottom: 5vh;
+    left:0;
+    right:0%;
+    font-size:5rem;
+    animation: slideDown 2s infinite;
+}
+
+.homepage {
+    background-size: cover;
+    background-position: center; 
+    width:100%;
+    height: 100%;
+}
+
+.homepage h2 {
+    color: white;
+    font-family: Poppins;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 5rem;
+}
+
+.centre p {
+    text-align: justify;
+    margin-right: 1rem;
+    font-family: Poppins;
+    font-size: 2rem;
+    line-height: 2.5rem;
+}
+
+.texte-droite > div {
+    flex-direction: row-reverse; /*texte a gauche*/
+}
+
+.texte-droite > div > div {
+    padding-left: 1rem;    
+}
+
+.texte-droite > div > div  > div  {
+    direction: rtl; /* titre à gauche */
+    margin:1rem;
+}
+
+.texte-droite .trait-dessous:after {
+    left: -6%;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.centrer .wp-block-image {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+#wp-block-file--media-f942aa55-83e3-4e37-9d09-d438dc1cc9a0 {
+    display: none;
+}
+
+.wp-block-file__button {
+    text-decoration: none!important;
+    margin-right: auto!important;
+    margin-left: auto!important;
+    margin-top: 0.5rem!important;
+    font-family: Poppins!important;
+    color: white!important;
+    font-size: 2rem!important;
+    margin-top: 1rem!important;
+    background-color: #FF7733!important;
+    border-radius: 5px!important;
+    width: fit-content!important;
+    width: -moz-fit-content!important;
+    padding: 0.5rem!important;
+    text-transform: uppercase!important;
+    font-weight: 500!important;
+    transition-duration: 0.5s!important ;
+}
+
+.blanc .wp-block-file__button:hover {
+    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.5)!important;
+}
+
+.noir .wp-block-file__button:hover {
+    box-shadow: 10px 5px 5px rgba(255, 255, 255, 0.5)!important;
+}
+
+.telecharger {
+    text-decoration: none!important;
+    margin-right: auto!important;
+    margin-left: auto!important;
+    margin-top: 0.5rem!important;
+    font-family: Poppins!important;
+    color: white!important;
+    font-size: 2rem!important;
+    margin-top: 1rem!important;
+    background-color: #FF7733!important;
+    border-radius: 5px!important;
+    width: fit-content!important;
+    width: -moz-fit-content!important;
+    padding: 0.5rem!important;
+    text-transform: uppercase!important;
+    font-weight: 500!important;
+    transition-duration: 0.5s!important ;
+}
+
+.blanc .telecharger:hover {
+    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.5)!important;
+}
+
+.noir .telecharger:hover {
+    box-shadow: 10px 5px 5px rgba(255, 255, 255, 0.5)!important;
+}
+
+.wp-block-file__embed {
+    display: none;
+}
+
+.centrer .centre {
+    flex-direction: column;
+}
+
+.centrer img {
+    max-width: 90%;
+}
+
+.sous-titre h1{
+    font-size : 2.3rem!important;
+}
+
+.gros-titre {
+    font-size: 3rem!important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* HOMEPAGE FRONTPAGE */
+
+
+#homepage-front img {
+    width:34%;
+}
+
+#homepage-front h2 {
+    font-size: 2rem;
+}
+
+
+/* HOMEINFO */
+
+
+.home-info{
+    font-family: Poppins;
+    display: flex;
+    padding:2rem;
+    position:relative;
+    width:85%;
+    justify-content: center;
+    margin-left: 3rem;
+}
+
+#home-information .part {
+    flex-basis: 50%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    margin-left: 4rem;
+}
+#home-inforamtion .int-petit {
+    font-size: 1.6rem;
+}
+#home-information .int {
+    margin-left: 2rem;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+#home-information {
+    position: relative;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+#home-information::after {
+    content: " ";
+    position: absolute;
+    width:70%;
+    height: 1px;
+    background-color: #041E30;
+    bottom:0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+
+/* THOMAS PESQUET */
+
+#thomas {
+    display: flex;
+}
+
+#thomas img {
+    object-fit: contain;
+   width: 23vw;
+}
+
+#thomas h1 {
+    font-family: Exo;
+    font-size: 5rem;
+}
+
+#thomas > div {
+    padding: 2rem;
+    width: 80%;
+    margin: auto;
+}
+
+.bleu {
+    color:#125788;
+}
+
+.titre-petit {
+    font-size:3rem;
+}
+
+.haut-titre {
+    font-size: 3rem;
+}
+
+/*TARIFS */
+
+#tarifs {
+    color: white;
+}
+
+#tarifs > div {
+    flex-direction: initial;
+}
+
+#tarifs table {
+    color: white;
+    text-transform: uppercase;
+    font-family: Poppins;
+    font-size: 1.8rem;
+    border-collapse: collapse;
+    text-align: center;
+}
+#tarifs td {
+    padding: 1rem;
+}
+
+.trait-bas {
+    border-bottom: solid white 1px;
+}
+
+#tarifs > div {
+    display: flex;
+    justify-content: space-around;
+}
+
+#options h1 {
+    font-family: Exo;
+    font-size:2rem;
+    text-transform: uppercase;
+}
+
+.obelixEstLa {
+    font-family: Poppins;
+    font-size: 1.5rem;
+}
+
+#obelix1 {
+    margin-bottom:0.1rem;;
+}
+
+.asterixEstLa {
+    font-size: 1rem;;
+    margin-top: 0;
+    font-family: Poppins;
+}
+
+#options > div {
+    display: flex;
+    align-items: center;
+}
+.bxs-parking {
+    font-size:2rem;
+    border: solid 1px white;
+    margin-right: 1rem;
+}
+
+/* EVENT */
+
+
+
+#event > div {
+    display: flex;
+}
+
+#event > div >div {
+    flex-basis: 50%;
+}
+
+/* COMPLEMENTAIRE */
+
+#complementaire h2 {
+    font-family: Poppins;
+    color: white;
+    font-size: 2rem;
+}
+
+#complementaire > div > div {
+    padding-left: 2rem;
+}
+
+.alinea{
+    text-indent:2rem;
+}
+
+/* PLAN */
+
+#plan {
+    position: relative;
+}
+
+#plan:after {
+    content: " ";
+    position: absolute;
+    width:70%;
+    height: 1px;
+    background-color: #041E30;
+    bottom:0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#plan img {
+    width: 90%;
+}
+
+
+
+
+.image > div {
+    flex-direction: column;
+}
+
+.image img {
+    width: 75%;
+    margin: auto;
+}
+
+
+
+/* PARTENAIRE */
+
+.liste-image .centre > div {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.liste-image .centre > div > div {
+    margin-bottom: 2rem;
+    display:flex;
+    justify-content: center;
+}
+
+.frame img {
+    object-fit: contain;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+}
+
+.frame {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: 250px;
+    height: 250px;
+    aspect-ratio: 1/1;
+}
+
+.liste-image .centre > div > div > div {
+    display: flex;
+}
+
+
+/*EXPOSANT */
+
+
+.expo img {
+    object-fit: contain;
+    border-radius: 50px;
+}
+
+#merci h3{
+    margin: auto;
+}
+
+#merci p {
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+#merci .centre > div {
+    margin: auto;
+}
+
+#merci img {
+    margin-top: 1rem;
+}
+
+
+
+/*CONTACTS */
+
+/* reseaux */
+
+#reseaux .bx{
+    color: white;
+    background-color: #FF7733;
+    border-radius: 50%;
+    font-size: 5rem;
+    padding: 3px;
+    margin:auto;
+}
+
+#reseaux a{
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+#reseaux > div > div {
+    text-align: center;
+}
+
+/* contact equipe et presse */
+
+#contact-equipe > div > div > div > div {
+    display: flex;
+    align-items: center;
+}
+
+#contact-equipe > div > div > div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#contact-equipe img {  
+    width: 50%;
+}
+
+#contact-equipe h2 {
+    font-family: Poppins;
+    font-size: 2rem;
+    font-weight: 500;
+    margin-left: 3rem;
+}
+
+
+/* formulaire contact */
+
+#form-contact form {
+    font-family: poppins;
+    color: white;
+    padding: 2rem;
+}
+
+#form-contact label {
+    display: block;
+    font-size: 3rem;
+}
+
+#form-contact > div > div {
+    padding-left: 2rem;
+}
+
+#form-contact input[type=text] {
+    font-size: 1.3rem;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+    padding-left: 1rem;
+    color: grey;
+    background-color: white;
+    border-radius: 15px;
+    border: none;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+#email {
+    width: 17%;
+}
+
+
+#form-contact textarea{
+    font-size: 1.3rem;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+    padding-left: 1rem;
+    color: grey;
+    background-color: white;
+    border-radius: 15px;
+    border: none;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    max-width: 100%;
+}
+
+#form-contact input[type=submit] {
+    font-size: 2.4rem;
+    display: block;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+    color: white;
+    background-color: #FF7733;
+    border-radius: 15px;
+    border: none;
+}
+
+#astrocoin img {
+    margin-top: 1rem;
+}
+
+#astrocoin > div > div {
+    display: flex;
+    align-items: center;
+}
+
+#astrocoin > div > div > div {
+    display: flex;
+    flex-direction: column;
+}
+
+#billets > div > div > div {
+    text-align: center;
+}
+
+
+/* astroncon dans a propos */
+#astrocon iframe {
+    width: 30%;
+}
+
+
+/* ACTIVITES */
+
+.activite #para-date {
+    flex-basis: 80%;
+}
+
+
+
+#communiquer img {
+    width: 35%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 1700px) {
+    .presse > div > div > div > div {
+        width: 100%;
+        justify-content: left;
+        margin: auto;
+    }
+
+    .presse > div > div > div {
+        flex-direction: column;
+    }
+
+    .expo img {
+        width: 26%;}
+
+}
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 1000px) { /* ON FAIT DU RESPONSIVE POUR LES ECRANS DE 1000 PX MAX */
+
+    section{ /* Afffichage en colonne pour toutes les sections */
+        display: flex;
+      flex-direction: column;
+    }
+    /* HOME LANDING */
+    .homepage h2{
+        margin-top: 4rem;
+        font-size:7rem;
+        line-height: 1.5;
+    }
+    
+    
+    #homepage-front img{
+        width: 90%;
+    }
+    .menu-item:after{
+        position:fixed;
+    }
+    .menu{ /* En normal il n'apparait pas grâce à l'opacity 0 */
+      opacity: 0;
+       display: flex;
+        flex-direction: column;
+        max-height: 0;
+    }
+    
+    .menu li {
+        padding-top: 2.8rem;
+        
+    }
+    .menu li a {
+        font-weight: 600;
+        font-size: 3rem;
+    }
+    .menu-mainastro-container{
+        margin-top: 3rem;
+    }
+    
+    /* MENU BURGER */
+
+    .lang-item > a > img {
+        height: auto!important;
+        width: 100px!important;
+    }
+
+    header .bx {
+        display: inline-block;
+    }
+    .header-toggle{ /* Le toggle se place en haut à droite, en opposition au menu */
+      top:25px;
+      right:25px;
+      display: block;
+      position:absolute
+    }
+    .header-toggle>div{
+        font-size: 12rem;
+    }
+    .header-toggle-close{ /* de base le truc pour fermer ne s'aaffiche pas */
+        display:none;
+      }
+      .header-toggle a{
+        color:#FFFFFF;
+      }
+    .menu{ /* Animation du menu burger*/
+        transition-duration: 0.3s;
+        transition-timing-function:ease-in-out ;
+      }
+      
+      .header-toggle-close{/* Animation du menu burger*/
+        transition-duration: 3s;
+        transition-timing-function:ease-in-out ;
+      }
+      .header-toggle-open{/* Animation du menu burger*/
+        transition-duration: 1s;
+        transition-timing-function:ease-in-out ;
+      }
+    
+      header:target .header-toggle-close{  /* Quand j'appuie sur main header la croix apparait */
+        display:inline;
+      }
+      
+      header:target .header-toggle-open{ /* quand j'appuie sur main header (quand #mainheader est présent dans l'url) la page se recharge et avec l'image toogle open en display none */
+        display:none;
+      }
+      
+      header:target .menu{ 
+        opacity: 1;
+        max-height: 0;  /* quand on appuie on lui remet un hauteur max normal pour qu'il revient */
+      }
+      header{ /* Permet de toujours avoir le menu burger bien visible (puisqu'il est en position absolute*/
+        position: relative;
+        height: 0;
+        background:none;
+        padding: 0;
+       
+        /* FIN DU MENU BURGER */
+    
+      }
+    
+      .bx-chevron-down {
+        padding-top: 30rem;
+        font-size: 200;
+      }
+    
+    #logo{
+        flex-basis: 0;
+        display: none;
+    }
+    /* INFOS */
+    .home-info{
+        margin-left: 1rem;
+        padding:0;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+     /*    flex-direction: column;
+      padding:0;
+       padding-top: 2rem; */
+    }
+    /*
+    #home-information .part{
+        margin-top: 2rem;
+        display: flex;
+        justify-content: space-between;
+        margin-left: 8rem;
+        margin-right: 3rem;
+    }*/
+    #home-information .part img{
+        width: 100px;
+    }
+    #home-information .part p{
+        text-align: center;
+        font-size: 2.2rem;
+    }
+     /* THOMAS PESQUET */
+    #thomas p{
+    text-align: justify;
+    font-size: 2.5rem;
+    padding: 0;
+    }
+    #thomas img{
+        width: 80%;
+        text-align: center;
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    #thomas {
+        margin:2rem;
+        text-align: center;
+        height: fit-content;
+        height: -moz-fit-content;
+    }
+
+    #thomas > div {
+        flex-direction: column;
+    }
+    
+    /* FOOTER */
+    #layoutFooter{
+        flex-direction: column;
+        padding: 2rem;
+        justify-content: center;
+    }
+    #partieUn img{
+    display: none;
+    }
+    #partieUn {
+        width: 100%;
+        margin:auto;
+        flex-direction: column;
+    }
+    #partieUn > div{
+        flex-direction: column;
+    }
+    #menu-mainastro-1{
+        flex-direction: initial;
+    }
+    #partieUn > div > div p {
+        display: inline;
+        padding-left: 1rem;
+        font-size: 1.5rem;
+    }
+    #partieUn > div > div {
+        margin-right:0;
+        text-align: center;
+    }
+    
+    #partieUn form{
+        width: 100%;
+    }
+    #partieUn input[type="text"]{
+        font-size: 1.5rem;
+        height: 100%;
+        padding: 0.5rem;
+    }
+    #partieUn input[type="submit"]{
+        height: 100%;
+        font-size: 1.3rem;
+        padding-top: 0.8rem;
+        padding-bottom: 0.8rem;
+    }
+    
+    #partieUn form label{
+        font-size: 2.5rem;
+        padding: 1rem;
+        text-align: center;
+    }
+    #partieUn ul{
+        flex-direction: initial;
+    }
+    #partieDeux{
+        align-items: center;
+        display: flex;
+        justify-content: space-around;
+        position:relative
+    }
+    #partieDeux >img{
+        width: 20%;
+        height: auto;
+    }
+    footer{
+        padding: 2rem;
+    }
+
+
+
+
+
+    /* INFO PRATIQUE */
+
+    #tarifs > div {
+        flex-direction: column;
+    }
+
+    #obelix2 {
+        width: fit-content;
+        width:-moz-fit-content;
+    }
+
+    #tarifs #options {
+        margin-top: 2rem;
+        text-align: center;
+    }
+
+    #tarifs #options > div {
+        justify-content: center;
+    }
+
+    /* Partenaire */
+     .liste-image .centre > div > div > div {
+        flex-direction: column;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    } 
+
+
+
+
+    #contact-equipe > div > div > div > div {
+        justify-content: left;
+    }
+
+    .equipe > div > div > div {
+        flex-direction: column;
+    }
+
+    /* fusée */
+
+    #remonter {
+        width: 120px;
+        height: 120px;
+    } 
+
+    #contact-equipe p {  
+        font-size: 2.3rem;
+    }
+
+    /* article */
+    .blanc > div {
+        flex-direction: column;
+    }
+    .noir > div {
+        flex-direction: column;
+    }
+
+     iframe {
+        width: 75%;
+        height: 390px;
+    }
+}
